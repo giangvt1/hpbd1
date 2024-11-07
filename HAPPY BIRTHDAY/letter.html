@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Letter</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(45deg, #ffe6eb, #fff5f7);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .letter-container {
+            background: white;
+            padding: 40px;
+            margin: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 153, 0.2);
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+        }
+
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid #ff6999;
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        h1 {
+            color: #ff6999;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .letter-content {
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.1em;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 40px;
+            color: #ff6999;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 20px;
+            background-color: #ff6999;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 105, 153, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 105, 153, 0.4);
+            background-color: #ff4d88;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Thêm hiệu ứng trái tim nhỏ bay lên */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6999;
+            transform: rotate(45deg);
+            opacity: 0;
+            animation: floatingHearts 4s ease-in infinite;
+        }
+
+        @keyframes floatingHearts {
+            0% {
+                transform: rotate(45deg) translateY(0) scale(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: rotate(45deg) translateY(-100vh) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="letter-container">
+        <h1>HAPPY BIRTHDAY</h1>
+        <div class="letter-content">
+            Con chúc mẹ sinh nhật vui vẻ hạnh phúc
+            <!-- Ví dụ nội dung: -->
+            <p>Mong mẹ tuổi mới sẽ luôn mạnh khỏe, luôn xinh đẹp</p>
+            
+            <div class="signature">
+                With love,<br>
+                Giang   
+            </div>
+        </div>
+    </div>
+
+    <a href="hpbd.html" class="back-button">Back</a>
+
+    <div class="footer">
+        Made with ❤️ for your special day
+    </div>
+
+    <script>
+        // Script tạo hiệu ứng trái tim bay
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.getElementById('hearts').appendChild(heart);
+
+            // Xóa trái tim sau khi animation kết thúc
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Tạo trái tim mới mỗi 300ms
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>

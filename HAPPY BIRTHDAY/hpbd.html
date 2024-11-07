@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Candle Blow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  </head>
+  <body>
+    <audio id="birthdaySong" loop>
+        <source src="your-audio-file.mp3" type="audio/mpeg">
+      </audio>
+  
+    <div class="candle-count-display">
+      Con chúc mừng Sinh Nhật Mẹ!
+    </div>
+    <div class="cake">
+      <div id="candleCount" style="display:none;"></div>
+      <div class="plate"></div>
+      <div class="layer layer-bottom"></div>
+      <div class="layer layer-middle"></div>
+      <div class="layer layer-top"></div>
+      <div class="icing"></div>
+      <div class="drip drip1"></div>
+      <div class="drip drip2"></div>
+      <div class="drip drip3"></div>
+      <div class="candles">
+        <div class="candle candle1">
+            <div class="flame">
+                <div class="inner-flame"></div>
+            </div>
+        </div>
+        <div class="candle candle2">
+            <div class="flame">
+                <div class="inner-flame"></div>
+            </div>
+        </div>
+        <div class="candle candle3">
+            <div class="flame">
+                <div class="inner-flame"></div>
+            </div>
+        </div>
+    </div>
+    <button onclick="window.location.href='letter.html';" class="letter-btn">Go to Letter</button>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  </body>
+</html>
